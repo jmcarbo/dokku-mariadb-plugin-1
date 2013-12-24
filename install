@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Build MariaDB image
+DB_IMAGE="marceldegraaf/mariadb"
+
+docker build -q=true -t "$DB_IMAGE" github.com/Kloadut/dokku-md-dockerfiles

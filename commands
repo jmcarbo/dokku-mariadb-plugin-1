@@ -1,0 +1,17 @@
+#!/bin/bash
+
+APP=$2
+DB_IMAGE=marceldegraaf/mariadb
+DATABASE_NAME="${APP}_production"
+
+# Get the ID of the currently running MariaDB container, if any
+id=$(docker ps | grep "$DB_IMAGE":latest |  awk '{print $1}')
+
+case $1 in
+  mariadb:status)
+    if [[ "$id" != "" ]]; then
+      echo "MariaDB container running with ID: ${id}"
+    else
+      echo "MariaDB container is not running"
+    fi
+    ;;

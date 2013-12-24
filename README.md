@@ -1,4 +1,4 @@
-dokku-mariadb-plugin
-====================
+MariaDB plugin for Dokku
+========================
 
-Single container MariaDB plugin for Dokku
+TODO: write this README ;-).
