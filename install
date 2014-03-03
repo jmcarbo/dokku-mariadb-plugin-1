@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Build MariaDB image
-DB_IMAGE="marceldegraaf/mariadb"
+DB_IMAGE="jmca/mariadb"
 
 echo "Building MariaDB image for Docker. This may take a while. Use \`docker ps\` to see what's happening."
+git clone https://github.com/Kloadut/dokku-md-dockerfiles.git /tmp
+cd /tmp/dokku-md-dockerfiles
 docker build -q=true -t "$DB_IMAGE" github.com/Kloadut/dokku-md-dockerfiles
