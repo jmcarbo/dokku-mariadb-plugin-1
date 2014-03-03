@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e;
 APP=$2
 DB_IMAGE=jmca/mariadb
 DATABASE_NAME="${APP}_production"
@@ -8,11 +8,18 @@ DATABASE_NAME="${APP}_production"
 id=$(docker ps | grep "$DB_IMAGE":latest |  awk '{print $1}')
 
 case $1 in
-  mariadbsingle:status)
+  mdbsingle:status)
     if [[ "$id" != "" ]]; then
       echo "MariaDB container running with ID: ${id}"
     else
       echo "MariaDB container is not running"
     fi
     ;;
+
+  help)
+    cat && cat<<EOF
+    mdbsingle:status            Status of mariadb container
+    ;;
+EOF
 esac
+cat
