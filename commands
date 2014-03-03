@@ -15,3 +15,4 @@ case $1 in
       echo "MariaDB container is not running"
     fi
     ;;
+esac
