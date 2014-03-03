@@ -109,6 +109,7 @@ case "$1" in
   mariadbs:status)
     if [[ "$id" != "" ]]; then
       echo "Mariadb container running with ID: ${id}"
+      echo DATABASE_URL="mysql2://root:${admin_pass}@${mariadb_public_ip}:${mariadb_port}/"
     else
       echo "Mariadb container not running"
     fi
