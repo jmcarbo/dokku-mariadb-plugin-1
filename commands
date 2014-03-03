@@ -8,7 +8,7 @@ DATABASE_NAME="${APP}_production"
 id=$(docker ps | grep "$DB_IMAGE":latest |  awk '{print $1}')
 
 case $1 in
-  mariadb:status)
+  mariadbsingle:status)
     if [[ "$id" != "" ]]; then
       echo "MariaDB container running with ID: ${id}"
     else
