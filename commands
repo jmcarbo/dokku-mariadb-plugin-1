@@ -1,7 +1,7 @@
 #!/bin/bash
 
 APP=$2
-DB_IMAGE=marceldegraaf/mariadb
+DB_IMAGE=jmca/mariadb
 DATABASE_NAME="${APP}_production"
 
 # Get the ID of the currently running MariaDB container, if any
