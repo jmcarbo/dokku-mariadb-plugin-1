@@ -98,7 +98,7 @@ case "$1" in
         admin_pass=$(cat "$DOKKU_ROOT/.mariadbs/pwd")
       fi
       chown dokku: "$DOKKU_ROOT/.mariadbs/pwd"
-      docker run -p 3306:3306 -d -v "$DOKKU_ROOT/.mariadbs/data":/var/lib/data "$db_image" start_mariadb.sh $admin_pass
+      docker run -p 3306:3306 -d -v "$DOKKU_ROOT/.mariadbs/data":/opt/mysql "$db_image" start_mariadb.sh $admin_pass
     fi
     ;;
   mariadbs:stop)
